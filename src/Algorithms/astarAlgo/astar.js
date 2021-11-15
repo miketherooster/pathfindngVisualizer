@@ -49,9 +49,21 @@ function Astar(startNode, endNode) {
                     openSet.push(neighbor);
                 }
 
+                if(newPath) {
+                    neighbor.h = heuristic(neighbor, endNode);
+                    neighbor.f = neighbor.h + neighbor.g;
+                    neighbor.previous = current;
+                }
 
             }
         }
 
     }
 }
+
+const heuristic = (a,b) => {
+    let d = Math.abs(a.x - a.y) + Math.abs(b.x - b.y);
+    return d;
+}
+
+export default Astar;

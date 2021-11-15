@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Node from "./node/Node";
+import Astar from "../Algorithms/astarAlgo/astar";
 import "./PathfindingVis.css";
 
 const cols = 25;
